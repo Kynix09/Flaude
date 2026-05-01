@@ -20,7 +20,21 @@ Flaude Code is an AI-powered coding assistant that helps you build features, fix
 - 🎛 Live output + thinking animation
 - 🔐 Permission system (Allow / Deny / Auto-allow)
 - 🎨 Clean Claude-style terminal UI
-- 🧩 Works with multiple models (Ollama + APIs)
+- 🧩 Works with multiple models and providers
+- 🌐 Supports Ollama, Anthropic, OpenRouter, NVIDIA NIM, LM Studio, llama.cpp, DeepSeek, Groq, Together, and more
+- ⚙️ Persistent settings saved automatically
+- 🧪 Experimental developer workflow assistant
+
+---
+
+## ⚠️ Safety Notice
+
+Flaude can run shell commands and modify files on your computer.
+
+Always review permission prompts carefully before allowing actions.  
+Use Auto-allow only if you fully trust the current task and model.
+
+This project is experimental software. Use it at your own risk.
 
 ---
 
@@ -57,36 +71,57 @@ python flaude.py
 
 Flaude settings are stored here:
 
-```
+```text
 C:\Users\<your-user>\.flaude\settings.flaude
 ```
 
 You can change settings via commands:
 
-```bash
+```text
 /model        # choose model
 /max 4096     # set max tokens
 /live         # toggle live output
 /auto         # toggle auto-allow
-/connect      # change backend/host
+/backend      # choose backend
+/connect      # change Ollama host/port
+/baseurl      # set OpenAI-compatible base URL
+/openai_key   # set OpenAI-compatible API key
 ```
 
 ---
 
 ## 🧠 Supported Backends
 
-- 🦙 Ollama (local models)
-- 🌐 API-based models (Anthropic, OpenAI, etc.)
+Flaude supports local and API-based models.
+
+### Local
+
+- 🦙 Ollama
+- 🖥 LM Studio
+- 🧩 llama.cpp server
+
+### API Providers
+
+- 🧠 Anthropic
+- 🌐 OpenRouter
+- 🚀 NVIDIA NIM
+- 🔎 DeepSeek
+- ⚡ Groq
+- 🌍 Together AI
+- 🔌 Other OpenAI-compatible APIs
 
 ---
 
 ## 🛠 Example Commands
 
-```
+```text
 Create a folder on my desktop
 Fix this Python error
 Make a calculator script
 Read this file and explain it
+Delete this file
+Rename this folder
+Create a Python project for me
 ```
 
 ---
@@ -95,7 +130,7 @@ Read this file and explain it
 
 Flaude will ask before executing actions:
 
-```
+```text
 Allow
 Deny
 Allow All
@@ -103,15 +138,34 @@ Allow All
 
 You stay in control of your system at all times.
 
+Auto-allow can be toggled with:
+
+```text
+/auto
+```
+
+---
+
+## 🧪 Live Output
+
+Enable live output with:
+
+```text
+/live
+```
+
+Live mode shows model output while it is being generated.
+
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 Flaude/
 ├── flaude.py
 ├── Images/
 ├── README.md
+├── LICENSE
 └── settings (auto-created)
 ```
 
@@ -124,6 +178,9 @@ Flaude/
 - [ ] Better multi-model routing
 - [ ] File diff viewer
 - [ ] Voice input
+- [ ] Better tool execution logs
+- [ ] More backend integrations
+- [ ] Safer sandbox mode
 
 ---
 
@@ -131,13 +188,30 @@ Flaude/
 
 Pull requests are welcome!
 
-If you have ideas, improvements, or bug fixes — feel free to contribute.
+If you have ideas, improvements, bug fixes, or backend integrations — feel free to contribute.
+
+Before opening a pull request:
+
+```text
+1. Keep the code readable
+2. Do not commit API keys or personal settings
+3. Test your changes
+4. Explain what your change does
+```
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License.
+Flaude Code is licensed under the MIT License.
+
+You are free to use, modify, and share it, but please keep the copyright notice:
+
+```text
+Copyright (c) 2026 Kynix09
+```
+
+See the `LICENSE` file for details.
 
 ---
 
