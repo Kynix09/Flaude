@@ -2,6 +2,8 @@
 
 Flaude Code is an AI-powered coding assistant that helps you build features, fix bugs, and automate development tasks — directly from your terminal.
 
+I built Flaude because many other “free Claude Code” alternatives felt too complicated, unstable, or difficult to set up. Flaude aims to be simpler, cleaner, and easier to use.
+
 ---
 
 ## 📸 Showcase
